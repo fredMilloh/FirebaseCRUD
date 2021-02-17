@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Log Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FirebaseCRUD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LogController" customModule="FirebaseCRUD" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -77,7 +77,26 @@
                                 <state key="normal" title="Valider">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="validateButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3di-sF-sIy"/>
+                                </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="0jv-QF-UDo">
+                                <rect key="frame" x="20" y="114" width="350" height="31"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="obe-mi-QHA"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Connection"/>
+                                    <segment title="Création Compte"/>
+                                </segments>
+                                <color key="tintColor" systemColor="systemIndigoColor"/>
+                                <color key="selectedSegmentTintColor" systemColor="systemPinkColor"/>
+                                <connections>
+                                    <action selector="segmentedChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="GtF-se-LZn"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -86,6 +105,7 @@
                             <constraint firstItem="BFz-zE-vlI" firstAttribute="top" secondItem="HNj-Ug-BPt" secondAttribute="bottom" constant="10" id="1yI-Dy-OLp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bVn-J5-HO2" secondAttribute="trailing" constant="20" id="2Bz-wT-tUC"/>
                             <constraint firstItem="bVn-J5-HO2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="6Ec-5I-a7J"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0jv-QF-UDo" secondAttribute="trailing" constant="20" id="6FD-7p-0LJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aHz-bx-8nk" secondAttribute="trailing" constant="20" id="B70-BX-KKI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CHH-J5-4ho" secondAttribute="trailing" constant="20" id="OZd-3K-kHp"/>
                             <constraint firstItem="KIQ-Id-2Rp" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="S9t-TA-hEQ"/>
@@ -97,9 +117,11 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7v2-vo-Qyy" secondAttribute="trailing" constant="20" id="Zfy-Sj-PiL"/>
                             <constraint firstItem="aHz-bx-8nk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="b0i-nQ-b78"/>
                             <constraint firstItem="CHH-J5-4ho" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="exr-SO-EKD"/>
+                            <constraint firstItem="0jv-QF-UDo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="gzL-dW-Q1h"/>
                             <constraint firstItem="HNj-Ug-BPt" firstAttribute="top" secondItem="CHH-J5-4ho" secondAttribute="bottom" constant="10" id="iNQ-K3-SLF"/>
                             <constraint firstAttribute="bottom" secondItem="KIQ-Id-2Rp" secondAttribute="bottom" id="kJf-ts-oSk"/>
                             <constraint firstItem="HNj-Ug-BPt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="l1k-Lh-0eC"/>
+                            <constraint firstItem="bVn-J5-HO2" firstAttribute="top" secondItem="0jv-QF-UDo" secondAttribute="bottom" constant="40" id="loC-XZ-5al"/>
                             <constraint firstItem="aHz-bx-8nk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="nbG-bZ-ykE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BFz-zE-vlI" secondAttribute="trailing" constant="20" id="nef-5l-mHl"/>
                             <constraint firstItem="KIQ-Id-2Rp" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="nv6-1G-w6x"/>
@@ -110,6 +132,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Kyp-EY-MWb"/>
+                    <connections>
+                        <outlet property="mailTF" destination="bVn-J5-HO2" id="Tec-nX-z2P"/>
+                        <outlet property="nameTF" destination="BFz-zE-vlI" id="771-A4-Bty"/>
+                        <outlet property="passWordTF" destination="CHH-J5-4ho" id="Uqz-06-RIA"/>
+                        <outlet property="segmented" destination="0jv-QF-UDo" id="ahj-7C-oB6"/>
+                        <outlet property="surnameTF" destination="HNj-Ug-BPt" id="BjA-2I-tur"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -138,6 +167,9 @@
         <image name="StarWarsTitle2" width="804" height="370"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
