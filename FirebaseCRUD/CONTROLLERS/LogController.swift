@@ -19,22 +19,38 @@ class LogController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setupUI()
+    }
+    
+    func setupUI() {
         if FireAuth().isAuth() { // si isAuth() renvoi true
             print("auth == true")
         } else {
             // isAuth() renvoi false
-            print ("auth == false")
+            updateVisible(true, mailTF)
+            updateVisible(true, passWordTF)
+            // si segmented est sur 1 (création) on affiche prénom et nom
+            let bool = segmented.selectedSegmentIndex != 0 // !=0 == true
+            updateVisible(bool, surnameTF)
+            updateVisible(bool, nameTF)
         }
+    }
+    // func pour afficher ou cacher les vues en fonction de la position création ou connection
+    func updateVisible(_ bool: Bool, _ view: UIView) {
+        view.isHidden = !bool
     }
     
     @IBAction func validateButton(_ sender: UIButton) {
     }
+    
     @IBAction func segmentedChanged(_ sender: Any) {
+        setupUI()
     }
     
 }
