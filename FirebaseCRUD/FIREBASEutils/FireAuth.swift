@@ -11,6 +11,7 @@ import Firebase
 class FireAuth {
     
 //MARK: - Authentification
+    
     // func qui retourne vrai ou faux si on est authentifier
     func isAuth() -> Bool {
         return Auth.auth().currentUser?.uid != nil

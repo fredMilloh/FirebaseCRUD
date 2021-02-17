@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LogController: UIViewController {
+class LogController: RootController {
     
     @IBOutlet weak var mailTF: UITextField!
     @IBOutlet weak var passWordTF: UITextField!
@@ -15,12 +15,10 @@ class LogController: UIViewController {
     @IBOutlet weak var nameTF: UITextField!
     @IBOutlet weak var segmented: UISegmentedControl!
     
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
+    
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,11 +44,18 @@ class LogController: UIViewController {
         view.isHidden = !bool
     }
     
+    
     @IBAction func validateButton(_ sender: UIButton) {
+        
     }
     
     @IBAction func segmentedChanged(_ sender: Any) {
         setupUI()
+    }
+    
+    // cache le clavier
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
     
 }

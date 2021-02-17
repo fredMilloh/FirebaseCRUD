@@ -16,6 +16,7 @@
 		B637354C25DAFE900087E20F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B637354B25DAFE900087E20F /* GoogleService-Info.plist */; };
 		B637356925DD23460087E20F /* LogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637356825DD23460087E20F /* LogController.swift */; };
 		B637356D25DD25480087E20F /* FireAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637356C25DD25480087E20F /* FireAuth.swift */; };
+		B637357125DD65730087E20F /* RootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637357025DD65730087E20F /* RootController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		B637354B25DAFE900087E20F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B637356825DD23460087E20F /* LogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogController.swift; sourceTree = "<group>"; };
 		B637356C25DD25480087E20F /* FireAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireAuth.swift; sourceTree = "<group>"; };
+		B637357025DD65730087E20F /* RootController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 		B637356525DD22C70087E20F /* CONTROLLERS */ = {
 			isa = PBXGroup;
 			children = (
+				B637357025DD65730087E20F /* RootController.swift */,
 				B637356825DD23460087E20F /* LogController.swift */,
 			);
 			path = CONTROLLERS;
@@ -244,6 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B637357125DD65730087E20F /* RootController.swift in Sources */,
 				B637356925DD23460087E20F /* LogController.swift in Sources */,
 				B637356D25DD25480087E20F /* FireAuth.swift in Sources */,
 				B637353225DAC7A10087E20F /* AppDelegate.swift in Sources */,
