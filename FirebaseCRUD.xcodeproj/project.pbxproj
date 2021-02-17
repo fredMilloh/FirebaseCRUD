@@ -17,6 +17,7 @@
 		B637356925DD23460087E20F /* LogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637356825DD23460087E20F /* LogController.swift */; };
 		B637356D25DD25480087E20F /* FireAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637356C25DD25480087E20F /* FireAuth.swift */; };
 		B637357125DD65730087E20F /* RootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637357025DD65730087E20F /* RootController.swift */; };
+		B637357E25DD90200087E20F /* FireDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637357D25DD90200087E20F /* FireDatabase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		B637356825DD23460087E20F /* LogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogController.swift; sourceTree = "<group>"; };
 		B637356C25DD25480087E20F /* FireAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireAuth.swift; sourceTree = "<group>"; };
 		B637357025DD65730087E20F /* RootController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootController.swift; sourceTree = "<group>"; };
+		B637357D25DD90200087E20F /* FireDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireDatabase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				B637356C25DD25480087E20F /* FireAuth.swift */,
+				B637357D25DD90200087E20F /* FireDatabase.swift */,
 			);
 			path = FIREBASEutils;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 			files = (
 				B637357125DD65730087E20F /* RootController.swift in Sources */,
 				B637356925DD23460087E20F /* LogController.swift in Sources */,
+				B637357E25DD90200087E20F /* FireDatabase.swift in Sources */,
 				B637356D25DD25480087E20F /* FireAuth.swift in Sources */,
 				B637353225DAC7A10087E20F /* AppDelegate.swift in Sources */,
 				B637353425DAC7A10087E20F /* SceneDelegate.swift in Sources */,
