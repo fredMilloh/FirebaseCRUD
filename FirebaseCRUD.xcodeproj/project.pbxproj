@@ -18,6 +18,8 @@
 		B637356D25DD25480087E20F /* FireAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637356C25DD25480087E20F /* FireAuth.swift */; };
 		B637357125DD65730087E20F /* RootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637357025DD65730087E20F /* RootController.swift */; };
 		B637357E25DD90200087E20F /* FireDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637357D25DD90200087E20F /* FireDatabase.swift */; };
+		B63735A325DEB2BA0087E20F /* ListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63735A225DEB2BA0087E20F /* ListController.swift */; };
+		B63735A625DEBA030087E20F /* ProfilController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63735A525DEBA030087E20F /* ProfilController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		B637356C25DD25480087E20F /* FireAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireAuth.swift; sourceTree = "<group>"; };
 		B637357025DD65730087E20F /* RootController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootController.swift; sourceTree = "<group>"; };
 		B637357D25DD90200087E20F /* FireDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireDatabase.swift; sourceTree = "<group>"; };
+		B63735A225DEB2BA0087E20F /* ListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListController.swift; sourceTree = "<group>"; };
+		B63735A525DEBA030087E20F /* ProfilController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 			children = (
 				B637357025DD65730087E20F /* RootController.swift */,
 				B637356825DD23460087E20F /* LogController.swift */,
+				B63735A225DEB2BA0087E20F /* ListController.swift */,
+				B63735A525DEBA030087E20F /* ProfilController.swift */,
 			);
 			path = CONTROLLERS;
 			sourceTree = "<group>";
@@ -251,11 +257,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B637357125DD65730087E20F /* RootController.swift in Sources */,
+				B63735A625DEBA030087E20F /* ProfilController.swift in Sources */,
 				B637356925DD23460087E20F /* LogController.swift in Sources */,
 				B637357E25DD90200087E20F /* FireDatabase.swift in Sources */,
 				B637356D25DD25480087E20F /* FireAuth.swift in Sources */,
 				B637353225DAC7A10087E20F /* AppDelegate.swift in Sources */,
 				B637353425DAC7A10087E20F /* SceneDelegate.swift in Sources */,
+				B63735A325DEB2BA0087E20F /* ListController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

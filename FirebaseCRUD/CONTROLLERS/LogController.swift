@@ -18,10 +18,12 @@ class LogController: RootController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        /*
         updateVisible(false, mailTF)
         updateVisible(false, passWordTF)
         updateVisible(false, surnameTF)
         updateVisible(false, nameTF)
+ */
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,7 +33,7 @@ class LogController: RootController {
     
     func setupUI() {
         if FireAuth().isAuth() { // si isAuth() renvoi true
-            print("auth == true")
+            toNextController()
         } else {
             // isAuth() renvoi false
             updateVisible(true, mailTF)
@@ -58,7 +60,7 @@ class LogController: RootController {
                             self.showAlert("Erreur", "erreur lors lors de l'authentification")
                         }
                         if uid != nil {
-                            //vers le controller suivant
+                            self.toNextController()
                         }
                     }
                    
@@ -74,6 +76,7 @@ class LogController: RootController {
                                     let data: [String: Any] = ["name": name, "surname": surname, "uid": uid!]
                                     FireDatabase().addUser(uid!, data: data)
                                     self.showAlert("Bienvenue \(surname)", "votre compte a été créé")
+                                    self.toNextController()
                                 }
                             }
                             
@@ -94,6 +97,10 @@ class LogController: RootController {
             // alert pas de mail
             showAlert("Champs vide", "Merci de renseigner votre adresse mail")
         }
+    }
+    
+    func toNextController() {
+        performSegue(withIdentifier: "ToList", sender: nil)
     }
     
     @IBAction func segmentedChanged(_ sender: Any) {

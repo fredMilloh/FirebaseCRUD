@@ -30,7 +30,13 @@ class FireAuth {
     }
     
     func signOut() {
-        
+        do {
+            try Auth.auth().signOut() // signOut() : throws donc do/catch
+            
+        } catch {
+            print(error.localizedDescription)
+            
+        }
     }
     
     func handleResult( _ data: AuthDataResult?, _ error: Error?) {
