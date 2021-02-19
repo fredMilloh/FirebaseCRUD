@@ -20,6 +20,7 @@
 		B637357E25DD90200087E20F /* FireDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637357D25DD90200087E20F /* FireDatabase.swift */; };
 		B63735A325DEB2BA0087E20F /* ListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63735A225DEB2BA0087E20F /* ListController.swift */; };
 		B63735A625DEBA030087E20F /* ProfilController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63735A525DEBA030087E20F /* ProfilController.swift */; };
+		B63735A925E025580087E20F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63735A825E025580087E20F /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		B637357D25DD90200087E20F /* FireDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireDatabase.swift; sourceTree = "<group>"; };
 		B63735A225DEB2BA0087E20F /* ListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListController.swift; sourceTree = "<group>"; };
 		B63735A525DEBA030087E20F /* ProfilController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilController.swift; sourceTree = "<group>"; };
+		B63735A825E025580087E20F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 		B637356725DD22E60087E20F /* MODELS */ = {
 			isa = PBXGroup;
 			children = (
+				B63735A825E025580087E20F /* User.swift */,
 			);
 			path = MODELS;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				B637356925DD23460087E20F /* LogController.swift in Sources */,
 				B637357E25DD90200087E20F /* FireDatabase.swift in Sources */,
 				B637356D25DD25480087E20F /* FireAuth.swift in Sources */,
+				B63735A925E025580087E20F /* User.swift in Sources */,
 				B637353225DAC7A10087E20F /* AppDelegate.swift in Sources */,
 				B637353425DAC7A10087E20F /* SceneDelegate.swift in Sources */,
 				B63735A325DEB2BA0087E20F /* ListController.swift in Sources */,

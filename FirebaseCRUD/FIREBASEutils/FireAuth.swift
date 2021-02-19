@@ -18,6 +18,10 @@ class FireAuth {
     func isAuth() -> Bool {
         return Auth.auth().currentUser?.uid != nil
     }
+    // func pour récupérer l'Id
+    func myId() -> String? {
+        return Auth.auth().currentUser?.uid
+    }
     
     func signIn(_ mail: String, _ pwd: String, completion: ((_ uid: String?, _ error: String?) -> Void)?) {
         self.completion = completion
@@ -32,10 +36,8 @@ class FireAuth {
     func signOut() {
         do {
             try Auth.auth().signOut() // signOut() : throws donc do/catch
-            
         } catch {
             print(error.localizedDescription)
-            
         }
     }
     
