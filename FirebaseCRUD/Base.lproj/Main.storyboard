@@ -340,7 +340,7 @@
                         <outlet property="profilImage" destination="u0r-7E-gb8" id="Fhh-tN-1ZP"/>
                         <outlet property="pseudoTF" destination="5of-xv-NYb" id="bVG-iH-MSB"/>
                         <outlet property="surnameTF" destination="7ps-Q3-xjx" id="16d-Rc-4wC"/>
-                        <segue destination="7d8-38-cdQ" kind="presentation" identifier="ToRoot" modalPresentationStyle="fullScreen" modalTransitionStyle="partialCurl" id="c4c-aA-VjD"/>
+                        <segue destination="7d8-38-cdQ" kind="presentation" identifier="ToRoot" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="7ij-RQ-EYg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WM3-LC-lYN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

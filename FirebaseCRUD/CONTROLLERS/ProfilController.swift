@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ProfilController: UIViewController {
     
@@ -19,6 +20,7 @@ class ProfilController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        completeForm()
 
     }
     
@@ -27,9 +29,10 @@ class ProfilController: UIViewController {
     func completeForm() {
         FireDatabase().getMe { (user) in
             if let me = user {
+                print("nouveau => " + me.name)
                 self.user = me
-                //self.nameTF.text = me.name
-                //self.surnameTF.text = me.surname
+                self.nameTF.placeholder = me.name
+                self.surnameTF.placeholder = me.surname
             }
         }
     }

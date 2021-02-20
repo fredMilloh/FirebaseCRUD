@@ -75,7 +75,6 @@ class LogController: RootController {
                                 if uid != nil {
                                     let data: [String: Any] = ["name": name, "surname": surname, "uid": uid!]
                                     FireDatabase().addUser(uid!, data: data)
-                                    self.showAlert("Bienvenue \(surname)", "votre compte a été créé")
                                     self.toNextController()
                                 }
                             }

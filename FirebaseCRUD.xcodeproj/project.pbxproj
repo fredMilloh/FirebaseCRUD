@@ -13,7 +13,6 @@
 		B637353925DAC7A10087E20F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B637353725DAC7A10087E20F /* Main.storyboard */; };
 		B637353B25DAC7A50087E20F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B637353A25DAC7A50087E20F /* Assets.xcassets */; };
 		B637353E25DAC7A50087E20F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B637353C25DAC7A50087E20F /* LaunchScreen.storyboard */; };
-		B637354C25DAFE900087E20F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B637354B25DAFE900087E20F /* GoogleService-Info.plist */; };
 		B637356925DD23460087E20F /* LogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637356825DD23460087E20F /* LogController.swift */; };
 		B637356D25DD25480087E20F /* FireAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637356C25DD25480087E20F /* FireAuth.swift */; };
 		B637357125DD65730087E20F /* RootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637357025DD65730087E20F /* RootController.swift */; };
@@ -21,6 +20,7 @@
 		B63735A325DEB2BA0087E20F /* ListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63735A225DEB2BA0087E20F /* ListController.swift */; };
 		B63735A625DEBA030087E20F /* ProfilController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63735A525DEBA030087E20F /* ProfilController.swift */; };
 		B63735A925E025580087E20F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63735A825E025580087E20F /* User.swift */; };
+		B63735DB25E04F9F0087E20F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B63735DA25E04F9F0087E20F /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,7 +34,6 @@
 		B637353A25DAC7A50087E20F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B637353D25DAC7A50087E20F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B637353F25DAC7A50087E20F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B637354B25DAFE900087E20F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B637356825DD23460087E20F /* LogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogController.swift; sourceTree = "<group>"; };
 		B637356C25DD25480087E20F /* FireAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireAuth.swift; sourceTree = "<group>"; };
 		B637357025DD65730087E20F /* RootController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootController.swift; sourceTree = "<group>"; };
@@ -42,6 +41,7 @@
 		B63735A225DEB2BA0087E20F /* ListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListController.swift; sourceTree = "<group>"; };
 		B63735A525DEBA030087E20F /* ProfilController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilController.swift; sourceTree = "<group>"; };
 		B63735A825E025580087E20F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B63735DA25E04F9F0087E20F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +95,7 @@
 				B637353A25DAC7A50087E20F /* Assets.xcassets */,
 				B637353C25DAC7A50087E20F /* LaunchScreen.storyboard */,
 				B637353F25DAC7A50087E20F /* Info.plist */,
-				B637354B25DAFE900087E20F /* GoogleService-Info.plist */,
+				B63735DA25E04F9F0087E20F /* GoogleService-Info.plist */,
 			);
 			path = FirebaseCRUD;
 			sourceTree = "<group>";
@@ -204,7 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B637353E25DAC7A50087E20F /* LaunchScreen.storyboard in Resources */,
-				B637354C25DAFE900087E20F /* GoogleService-Info.plist in Resources */,
+				B63735DB25E04F9F0087E20F /* GoogleService-Info.plist in Resources */,
 				B637353B25DAC7A50087E20F /* Assets.xcassets in Resources */,
 				B637353925DAC7A10087E20F /* Main.storyboard in Resources */,
 			);

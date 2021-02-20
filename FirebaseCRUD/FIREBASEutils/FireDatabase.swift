@@ -5,6 +5,7 @@
 //  Created by fred on 17/02/2021.
 //
 
+import Foundation
 import UIKit
 import Firebase
 
@@ -34,7 +35,10 @@ class FireDatabase {
                     completion?(nil)
                 }
                 if doc != nil {
-                    print(doc!.data())
+                    print(doc!.data() as Any)
+                    let newUser = User(doc!)
+                    print(newUser.name)
+                    completion?(newUser)
                 }
             }
         } else {
