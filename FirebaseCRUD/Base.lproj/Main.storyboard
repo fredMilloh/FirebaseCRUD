@@ -172,7 +172,7 @@
                                     <action selector="disconnect:" destination="aPL-Gl-loa" eventType="touchUpInside" id="ZaY-hN-xYT"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u0r-7E-gb8">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="u0r-7E-gb8">
                                 <rect key="frame" x="120" y="44" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="BwU-Lb-8At"/>
@@ -420,6 +420,7 @@
     <resources>
         <image name="StarWarsBackgroundH" width="784" height="1032"/>
         <image name="StarWarsTitle2" width="804" height="370"/>
+        <image name="addPhoto" width="300" height="300"/>
         <image name="film" catalog="system" width="128" height="93"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <systemColor name="systemBackgroundColor">

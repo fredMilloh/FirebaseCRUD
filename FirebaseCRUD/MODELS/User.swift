@@ -14,6 +14,7 @@ class User {
     var uid: String
     var surname: String
     var name: String
+    var profilImageUrl: String?
     
     init(_ document: DocumentSnapshot) {
         ref = document.reference
@@ -21,5 +22,6 @@ class User {
         let data = document.data() ?? [:]
         name = data["name"] as? String ?? ""
         surname = data["surname"] as? String ?? ""
+        profilImageUrl = data["profilImageUrl"] as? String
     }
 }
