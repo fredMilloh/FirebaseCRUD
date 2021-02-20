@@ -47,7 +47,7 @@ class ProfilController: UIViewController {
         guard myId == myUser.uid else { return }
     //on définit la zône où le touché est actif
         if touch.view == profilImage {
-            imageAlert()
+            profilImageAlert()
             print("geste reconnu)")
         } else {
             return
@@ -55,7 +55,7 @@ class ProfilController: UIViewController {
         
     }
     
-    func imageAlert() {
+    func profilImageAlert() {
         let photoSourceController = UIAlertController(title: "", message: "Choississez votre image", preferredStyle: .actionSheet)
         
         let cameraAction = UIAlertAction(title: "Appareil photo", style: .default) { (action) in
