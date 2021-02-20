@@ -47,12 +47,44 @@ class ProfilController: UIViewController {
         guard myId == myUser.uid else { return }
     //on définit la zône où le touché est actif
         if touch.view == profilImage {
-            //action
+            imageAlert()
+            print("geste reconnu)")
         } else {
             return
         }
         
     }
+    
+    func imageAlert() {
+        let photoSourceController = UIAlertController(title: "", message: "Choississez votre image", preferredStyle: .actionSheet)
+        
+        let cameraAction = UIAlertAction(title: "Appareil photo", style: .default) { (action) in
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                let imagePicker = UIImagePickerController()
+                imagePicker.delegate = self
+                imagePicker.allowsEditing = true
+                imagePicker.sourceType = .camera
+                
+                self.present(imagePicker, animated: true, completion: nil)
+            }
+        }
+        let albumPhotoAction = UIAlertAction(title: "Album photo", style: .default) { (action) in
+            if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+                let imagePicker = UIImagePickerController()
+                imagePicker.delegate = self
+                imagePicker.allowsEditing = true
+                imagePicker.sourceType = .photoLibrary
+                
+                self.present(imagePicker, animated: true, completion: nil)
+            }
+        }
+        
+        photoSourceController.addAction(cameraAction)
+        photoSourceController.addAction(albumPhotoAction)
+        
+        present(photoSourceController, animated: true, completion: nil)
+    }
+
     
     @IBAction func validateButton(_ sender: UIButton) {
     }
@@ -69,3 +101,23 @@ class ProfilController: UIViewController {
     
 
 }
+
+extension ProfilController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    //imagePicker a un tableau d'image = info
+    //l'image est soit éditée(une partie avec le zoom), ou originale
+        if let editedImage = info[.editedImage] as? UIImage {
+            profilImage.image = editedImage.withRenderingMode(.alwaysOriginal)
+            
+        } else if let originalImage = info[.originalImage] as? UIImage {
+            profilImage.image = originalImage.withRenderingMode(.alwaysOriginal)
+        }
+        dismiss(animated: true, completion: nil)
+    }
+}
+
