@@ -15,6 +15,7 @@ class User {
     var surname: String
     var name: String
     var profilImageUrl: String?
+    var timeStamp: Double?
     
     init(_ document: DocumentSnapshot) {
         ref = document.reference
@@ -23,5 +24,6 @@ class User {
         name = data["name"] as? String ?? ""
         surname = data["surname"] as? String ?? ""
         profilImageUrl = data["profilImageUrl"] as? String
+        timeStamp = data["timeStamp"] as? Double ?? 0.0
     }
 }

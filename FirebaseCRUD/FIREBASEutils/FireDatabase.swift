@@ -11,10 +11,10 @@ import Firebase
 
 class FireDatabase {
     
-    // chemin d'accès à la base du projet
+        // chemin d'accès à la base du projet
     let base = Firestore.firestore()
     
-    // chemin d'accès à la collection nommée "users"
+        // chemin d'accès à la collection nommée "users"
     var usersCollection: CollectionReference {
         return base.collection("users")
     }
@@ -23,6 +23,12 @@ class FireDatabase {
         usersCollection.document(uid).setData(data)
         // dans la collection "users", on créé un document attaché à l'uid de Auth
         // ce document comprendra un tableau de data, exemple : [name: wood, surname: matt]
+    }
+    
+        //func qui met à jour l'user
+    func updateUser(_ uid: String, data: [String: Any]) {
+        usersCollection.document(uid).updateData(data)
+        //update met à jour ce qui est necessaire, setData créé en effacant tout
     }
     
     typealias UserCompletion = (_ user: User?) -> Void

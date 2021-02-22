@@ -10,13 +10,20 @@ import Firebase
 
 class FireStorage {
     
-    //point d'entrée du storage
+        //point d'entrée du storage
     var base = Storage.storage().reference()
     
-    //chemin du stockage : base.child(uid) = dossier storage de l'user(uid)  .child("profilImageUrl"= dossier profilImage
+        //chemin du stockage : base.child(uid) = dossier storage de l'user(uid)  .child("profilImageUrl"= dossier profilImage
     func userProfile(_ uid: String) -> StorageReference {
         return base.child(uid).child("profilImageUrl")
     }
+    /*
+        //pour les images de la liste = post
+    func post(_ uid: String, _ timeStamp: Double) -> StorageReference {
+        return base.child(uid).child("posts").child("\(timeStamp"))
+    }
+    */
+    
     
     typealias ImageUploadCompletion = (_ urlString: String?, _ error: Error?) -> Void
     

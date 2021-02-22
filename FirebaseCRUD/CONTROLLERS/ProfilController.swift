@@ -87,6 +87,7 @@ class ProfilController: UIViewController {
 
     
     @IBAction func validateButton(_ sender: UIButton) {
+        updateProfile(profilImage.image!)
     }
     
     
@@ -98,6 +99,15 @@ class ProfilController: UIViewController {
         }
     }
     
+    func updateProfile(_ image: UIImage) {
+        guard let uid = FireAuth().myId() else { return }
+        let ref = FireStorage().userProfile(uid) //définit un emplacement pour l'user
+        FireStorage().sendImageToFirebase(ref, image) { (url, error) in   //envoi l'image et récupére l'url
+            if let urlString = url {
+                FireDatabase().updateUser(uid, data: ["profilImageUrl": urlString])   //met à jour le profil = ajout url
+            }
+        }
+    }
     
 
 }
