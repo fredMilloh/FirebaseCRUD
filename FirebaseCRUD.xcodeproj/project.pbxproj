@@ -24,6 +24,7 @@
 		B63735F925E11DEA0087E20F /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63735F825E11DEA0087E20F /* ImageLoader.swift */; };
 		B63735FC25E18A940087E20F /* FireStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63735FB25E18A940087E20F /* FireStorage.swift */; };
 		B637363A25E6A9850087E20F /* AddMovieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637363925E6A9850087E20F /* AddMovieController.swift */; };
+		B637363E25E6CEE60087E20F /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637363D25E6CEE60087E20F /* Movie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		B63735F825E11DEA0087E20F /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		B63735FB25E18A940087E20F /* FireStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStorage.swift; sourceTree = "<group>"; };
 		B637363925E6A9850087E20F /* AddMovieController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMovieController.swift; sourceTree = "<group>"; };
+		B637363D25E6CEE60087E20F /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				B63735A825E025580087E20F /* User.swift */,
+				B637363D25E6CEE60087E20F /* Movie.swift */,
 			);
 			path = MODELS;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				B637356D25DD25480087E20F /* FireAuth.swift in Sources */,
 				B63735A925E025580087E20F /* User.swift in Sources */,
 				B637353225DAC7A10087E20F /* AppDelegate.swift in Sources */,
+				B637363E25E6CEE60087E20F /* Movie.swift in Sources */,
 				B637353425DAC7A10087E20F /* SceneDelegate.swift in Sources */,
 				B63735A325DEB2BA0087E20F /* ListController.swift in Sources */,
 				B637363A25E6A9850087E20F /* AddMovieController.swift in Sources */,

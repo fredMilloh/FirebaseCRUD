@@ -10,7 +10,6 @@ import SDWebImage
 
 class ProfilController: UIViewController {
     
-    
     @IBOutlet weak var profilImage: UIImageView!
     @IBOutlet weak var nameTF: UITextField!
     @IBOutlet weak var surnameTF: UITextField!
@@ -48,7 +47,7 @@ class ProfilController: UIViewController {
     //on définit la zône où le touché est actif
         if touch.view == profilImage {
             profilImageAlert()
-            print("geste reconnu)")
+            print("geste reconnu")
         } else {
             return
         }
@@ -130,4 +129,3 @@ extension ProfilController: UIImagePickerControllerDelegate, UINavigationControl
         dismiss(animated: true, completion: nil)
     }
 }
-
