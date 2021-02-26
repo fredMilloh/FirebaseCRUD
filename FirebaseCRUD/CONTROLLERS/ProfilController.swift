@@ -33,9 +33,10 @@ class ProfilController: UIViewController {
                 print(me)
                 print("nouveau => " + me.name)
                 self.user = me
-                self.nameTF.placeholder = me.name
-                self.surnameTF.placeholder = me.surname
-                self.adresseMailTF.placeholder = email
+                self.nameTF.text = me.name
+                self.surnameTF.text = me.surname
+                self.adresseMailTF.text = email
+                self.pseudoTF.text = me.pseudo
                 ImageLoader().loadImage(self.user?.profilImageUrl, self.profilImage)
             }
         }
@@ -105,9 +106,15 @@ class ProfilController: UIViewController {
     func updateProfile(_ image: UIImage) {
         guard let uid = FireAuth().myId() else { return }
         let ref = FireStorage().userProfile(uid) //définit un emplacement pour l'user
+        
         FireStorage().sendImageToFirebase(ref, image) { (url, error) in   //envoi l'image et récupére l'url
             if let urlString = url {
-                FireDatabase().updateUser(uid, data: ["profilImageUrl": urlString])   //met à jour le profil = ajout url
+                let data: [String: Any] = ["profilImageUrl": urlString,
+                                           "name": self.nameTF.text as Any,
+                                           "surname": self.surnameTF.text as Any,
+                                           "pseudo": self.pseudoTF.text as Any
+                                          ]
+                FireDatabase().updateUser(uid, data: data)   //met à jour le profil = ajout url
             }
         }
     }
@@ -130,5 +137,13 @@ extension ProfilController: UIImagePickerControllerDelegate, UINavigationControl
             profilImage.image = originalImage.withRenderingMode(.alwaysOriginal)
         }
         dismiss(animated: true, completion: nil)
+    }
+}
+
+extension ProfilController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

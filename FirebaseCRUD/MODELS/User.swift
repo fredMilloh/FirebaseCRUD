@@ -14,6 +14,7 @@ class User {
     var uid: String
     var surname: String
     var name: String
+    var pseudo: String?
     var profilImageUrl: String?
     var timeStamp: Double?
     
@@ -23,6 +24,7 @@ class User {
         let data = document.data() ?? [:]
         name = data["name"] as? String ?? ""
         surname = data["surname"] as? String ?? ""
+        pseudo = data["pseudo"] as? String ?? ""
         profilImageUrl = data["profilImageUrl"] as? String
         timeStamp = data["timeStamp"] as? Double ?? 0.0
     }
