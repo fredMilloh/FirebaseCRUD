@@ -18,6 +18,10 @@ class FireDatabase {
     var usersCollection: CollectionReference {
         return base.collection("users")
     }
+        // chemin d'accés à la collection nommé "movies"
+    var moviesCollection: CollectionReference {
+        return base.collection("movies")
+    }
     
     func addUser(_ uid: String, data: [String: Any]) {
         usersCollection.document(uid).setData(data)
@@ -30,7 +34,7 @@ class FireDatabase {
         usersCollection.document(uid).updateData(data)
         //update met à jour ce qui est necessaire, setData créé en effacant tout
     }
-    
+        // pour récupérer les infos de mon compte
     typealias UserCompletion = (_ user: User?) -> Void
     
     func getMe(completion: UserCompletion?) {
@@ -50,5 +54,10 @@ class FireDatabase {
         } else {
             completion?(nil)
         }
+    }
+    
+    //pour envoyer un movie sur la database
+    func addMovie(_ data: [String: Any]) {
+        moviesCollection.document().setData(data)
     }
 }

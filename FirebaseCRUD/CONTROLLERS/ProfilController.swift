@@ -28,6 +28,7 @@ class ProfilController: UIViewController {
     func completeForm() {
         FireDatabase().getMe { (user) in
             if let me = user {
+                print(me)
                 print("nouveau => " + me.name)
                 self.user = me
                 self.nameTF.placeholder = me.name
@@ -107,7 +108,6 @@ class ProfilController: UIViewController {
             }
         }
     }
-    
 
 }
 

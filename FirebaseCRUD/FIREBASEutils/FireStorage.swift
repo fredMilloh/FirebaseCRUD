@@ -17,12 +17,12 @@ class FireStorage {
     func userProfile(_ uid: String) -> StorageReference {
         return base.child(uid).child("profilImageUrl")
     }
-    /*
-        //pour les images de la liste = post
-    func post(_ uid: String, _ timeStamp: Double) -> StorageReference {
-        return base.child(uid).child("posts").child("\(timeStamp"))
+    
+        //pour les images de film =
+    func affiche(_ uid: String, _ timeStamp: Double) -> StorageReference {
+        return base.child(uid).child("affiche").child("\(timeStamp)")
     }
-    */
+    
     
     
     typealias ImageUploadCompletion = (_ urlString: String?, _ error: Error?) -> Void

@@ -18,7 +18,6 @@ class Movie {
     var director: String
     var pitch: String
     var movieImageUrl: String?
-    var timeStamp: Double?
     
     init(_ document: DocumentSnapshot) {
         ref = document.reference
@@ -30,6 +29,5 @@ class Movie {
         director = data["director"] as? String ?? ""
         pitch = data["pitch"] as? String ?? ""
         movieImageUrl = data["profilImageUrl"] as? String
-        timeStamp = data["timeStamp"] as? Double ?? 0.0
     }
 }

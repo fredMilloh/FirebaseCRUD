@@ -22,6 +22,10 @@ class FireAuth {
     func myId() -> String? {
         return Auth.auth().currentUser?.uid
     }
+    // func pour récupérer l'email
+    func myEmail() -> String? {
+        return Auth.auth().currentUser?.email
+    }
     
     func signIn(_ mail: String, _ pwd: String, completion: ((_ uid: String?, _ error: String?) -> Void)?) {
         self.completion = completion
