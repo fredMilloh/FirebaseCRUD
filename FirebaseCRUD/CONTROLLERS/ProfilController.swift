@@ -26,6 +26,8 @@ class ProfilController: UIViewController {
     var user: User?
     
     func completeForm() {
+        guard let email = FireAuth().myEmail() else { return }
+        
         FireDatabase().getMe { (user) in
             if let me = user {
                 print(me)
@@ -33,6 +35,7 @@ class ProfilController: UIViewController {
                 self.user = me
                 self.nameTF.placeholder = me.name
                 self.surnameTF.placeholder = me.surname
+                self.adresseMailTF.placeholder = email
                 ImageLoader().loadImage(self.user?.profilImageUrl, self.profilImage)
             }
         }
