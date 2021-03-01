@@ -119,7 +119,7 @@ class ProfilController: UIViewController {
 */
     }
     
-//MARK: - update
+//MARK: - update profil
         
         func updateProfile(_ image: UIImage) {
             guard let uid = FireAuth().myId() else { return }
@@ -137,7 +137,6 @@ class ProfilController: UIViewController {
                 }
             }
         }
-    
 
 }
 

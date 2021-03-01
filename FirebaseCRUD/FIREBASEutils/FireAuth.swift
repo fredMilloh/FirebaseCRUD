@@ -60,20 +60,20 @@ class FireAuth {
         Auth.auth().createUser(withEmail: mail, password: pwd, completion: handleResult(_:_:))
     }
     
-    func signOut() {
-        do {
-            try Auth.auth().signOut() // signOut() : throws donc do/catch
-        } catch {
-            print(error.localizedDescription)
-        }
-    }
-    
     func handleResult( _ data: AuthDataResult?, _ error: Error?) {
         if error != nil {
             self.completion?(nil, error?.localizedDescription)
         }
         if let uid = data?.user.uid {
             self.completion?(uid, nil)
+        }
+    }
+    
+    func signOut() {
+        do {
+            try Auth.auth().signOut() // signOut() : throws donc do/catch
+        } catch {
+            print(error.localizedDescription)
         }
     }
 }

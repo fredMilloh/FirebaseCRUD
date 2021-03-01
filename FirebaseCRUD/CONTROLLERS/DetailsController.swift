@@ -32,6 +32,8 @@ class DetailsController: UIViewController {
         ImageLoader().loadImage(self.movieSelected.movieImageUrl, self.movieImage)
     }
     
+//MARK: buttons
+    
     @IBAction func closeButton(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }

@@ -23,7 +23,7 @@ class LogController: RootController {
         updateVisible(false, passWordTF)
         updateVisible(false, surnameTF)
         updateVisible(false, nameTF)
- */
+       */
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,7 +48,8 @@ class LogController: RootController {
     func updateVisible(_ bool: Bool, _ view: UIView) {
         view.isHidden = !bool
     }
-    
+ 
+//MARK: - buttons
     
     @IBAction func validateButton(_ sender: UIButton) {
         if let mail = mailTF.text, mail != "" {
@@ -102,11 +103,13 @@ class LogController: RootController {
         performSegue(withIdentifier: "ToList", sender: nil)
     }
     
+    //créer un compte ou s'identifier
     @IBAction func segmentedChanged(_ sender: Any) {
         setupUI()
     }
     
-    // cache le clavier
+//MARK: - cache le clavier
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }

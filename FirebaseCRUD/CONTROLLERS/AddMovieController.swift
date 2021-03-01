@@ -19,6 +19,8 @@ class AddMovieController: RootController {
     
     override func viewDidLoad() {
     }
+
+//MARK: - buttons
     
     @IBAction func dismissPopup(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
@@ -63,6 +65,14 @@ class AddMovieController: RootController {
         }
     }
     
+//MARK: - cache le clavier
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
+//MARK: - alerte pour imagePicker
+    
     func movieImageAlert() {
         let photoSourceController = UIAlertController(title: "", message: "Choississez votre image", preferredStyle: .actionSheet)
         
@@ -92,13 +102,10 @@ class AddMovieController: RootController {
         
         present(photoSourceController, animated: true, completion: nil)
     }
-    
-    // cache le clavier
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        view.endEditing(true)
-    }
-
 }
+
+//MARK: - extensions
+
 extension AddMovieController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

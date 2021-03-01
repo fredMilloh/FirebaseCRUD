@@ -29,8 +29,6 @@ class ListController: UIViewController {
         }
     }
     
-
-
 }
 extension ListController: UITableViewDelegate, UITableViewDataSource {
     
