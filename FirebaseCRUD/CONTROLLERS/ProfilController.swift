@@ -17,13 +17,15 @@ class ProfilController: UIViewController {
     @IBOutlet weak var passWordTF: UITextField!
     @IBOutlet weak var pseudoTF: UITextField!
     
+    var user: User?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         completeForm()
 
     }
     
-    var user: User?
+//MARK: - get user
     
     func completeForm() {
         guard let email = FireAuth().myEmail() else { return }
@@ -42,6 +44,8 @@ class ProfilController: UIViewController {
         }
     }
     
+//MARK: - touches
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     // on vérifie s'il y a un touché = le tableau de touché "Set<UITouch>" n'est pas vide = au moins 1 touché
         guard let touch = touches.first else { return }
@@ -58,6 +62,8 @@ class ProfilController: UIViewController {
         }
         
     }
+    
+//MARK: - Alert popup imagePicker
     
     func profilImageAlert() {
         let photoSourceController = UIAlertController(title: "", message: "Choississez votre image", preferredStyle: .actionSheet)
@@ -89,6 +95,7 @@ class ProfilController: UIViewController {
         present(photoSourceController, animated: true, completion: nil)
     }
 
+//MARK: - buttons
     
     @IBAction func validateButton(_ sender: UIButton) {
         updateProfile(profilImage.image!)
@@ -103,23 +110,6 @@ class ProfilController: UIViewController {
         }
     }
     
-    func updateProfile(_ image: UIImage) {
-        guard let uid = FireAuth().myId() else { return }
-        
-        let ref = FireStorage().userProfile(uid) //définit un emplacement pour l'user
-        
-        FireStorage().sendImageToFirebase(ref, image) { (url, error) in   //envoi l'image et récupére l'url
-            if let urlString = url {
-                let data: [String: Any] = ["profilImageUrl": urlString,
-                                           "name": self.nameTF.text as Any,
-                                           "surname": self.surnameTF.text as Any,
-                                           "pseudo": self.pseudoTF.text as Any
-                                          ]
-                FireDatabase().updateUser(uid, data: data)   //met à jour le profil = ajout url + pseudo + changement
-            }
-        }
-    }
-    
     @IBAction func updateMailButton(_ sender: UIButton) {
         print("Méthode en contruction ...")
 /*
@@ -129,8 +119,29 @@ class ProfilController: UIViewController {
 */
     }
     
+//MARK: - update
+        
+        func updateProfile(_ image: UIImage) {
+            guard let uid = FireAuth().myId() else { return }
+            
+            let ref = FireStorage().userProfile(uid) //définit un emplacement pour l'user
+            
+            FireStorage().sendImageToFirebase(ref, image) { (url, error) in   //envoi l'image et récupére l'url
+                if let urlString = url {
+                    let data: [String: Any] = ["profilImageUrl": urlString,
+                                               "name": self.nameTF.text as Any,
+                                               "surname": self.surnameTF.text as Any,
+                                               "pseudo": self.pseudoTF.text as Any
+                                              ]
+                    FireDatabase().updateUser(uid, data: data)   //met à jour le profil = ajout url + pseudo + changement
+                }
+            }
+        }
+    
 
 }
+
+//MARK: - extensions
 
 extension ProfilController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     

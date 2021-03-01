@@ -91,4 +91,8 @@ class FireDatabase {
             movieCompletion?(movies, nil)
         }
     }
+    
+    func updateMovie(_ uid: String, data: [String: Any]) {
+        moviesCollection.document(uid).updateData(data)
+    }
 }
