@@ -12,20 +12,21 @@ class ListController: UIViewController {
     var movies: [Movie] = []
     @IBOutlet weak var tableView: UITableView!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        retrieveMovies()
+    }
+    
+    func retrieveMovies() {
         FireDatabase().getMovies { (movies, error) in
             if let newMovies = movies {
                 self.movies = newMovies
                 self.tableView.reloadData()
-                print("filmList", self.movies)
             }
         }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        tableView.reloadData()
     }
     
 
@@ -40,11 +41,14 @@ extension ListController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count
     }
-    /*
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        <#code#>
+        let detailMovie = self.storyboard?.instantiateViewController(identifier: "ToDetail") as! DetailsController
+        let movieSelected = movies[indexPath.row]
+        detailMovie.movieSelected = movieSelected
+        self.navigationController?.pushViewController(detailMovie, animated: true)
     }
-    */
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell") else { return UITableViewCell() }

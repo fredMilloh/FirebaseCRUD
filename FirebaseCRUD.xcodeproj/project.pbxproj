@@ -25,6 +25,7 @@
 		B63735FC25E18A940087E20F /* FireStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63735FB25E18A940087E20F /* FireStorage.swift */; };
 		B637363A25E6A9850087E20F /* AddMovieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637363925E6A9850087E20F /* AddMovieController.swift */; };
 		B637363E25E6CEE60087E20F /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637363D25E6CEE60087E20F /* Movie.swift */; };
+		B63BD0E725ECEBD700BD0D24 /* DetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63BD0E625ECEBD700BD0D24 /* DetailsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		B63735FB25E18A940087E20F /* FireStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStorage.swift; sourceTree = "<group>"; };
 		B637363925E6A9850087E20F /* AddMovieController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMovieController.swift; sourceTree = "<group>"; };
 		B637363D25E6CEE60087E20F /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		B63BD0E625ECEBD700BD0D24 /* DetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				B63735A225DEB2BA0087E20F /* ListController.swift */,
 				B63735A525DEBA030087E20F /* ProfilController.swift */,
 				B637363925E6A9850087E20F /* AddMovieController.swift */,
+				B63BD0E625ECEBD700BD0D24 /* DetailsController.swift */,
 			);
 			path = CONTROLLERS;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B63BD0E725ECEBD700BD0D24 /* DetailsController.swift in Sources */,
 				B637357125DD65730087E20F /* RootController.swift in Sources */,
 				B63735A625DEBA030087E20F /* ProfilController.swift in Sources */,
 				B63735F925E11DEA0087E20F /* ImageLoader.swift in Sources */,

@@ -28,6 +28,6 @@ class Movie {
         year = data["year"] as? String ?? ""
         director = data["director"] as? String ?? ""
         pitch = data["pitch"] as? String ?? ""
-        movieImageUrl = data["profilImageUrl"] as? String
+        movieImageUrl = data["movieImageUrl"] as? String
     }
 }

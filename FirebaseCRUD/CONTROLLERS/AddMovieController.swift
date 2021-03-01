@@ -56,6 +56,7 @@ class AddMovieController: RootController {
                     }
                 }
             }
+            print("movie ajouté")
         } else {
             showAlert("erreur", "Pour envoyer un film, renseigner au moins un élément ou prenez une photo")
         }
