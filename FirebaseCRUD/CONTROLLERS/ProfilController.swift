@@ -35,7 +35,7 @@ class ProfilController: UIViewController {
                 self.user = me
                 self.nameTF.text = me.name
                 self.surnameTF.text = me.surname
-                self.adresseMailTF.text = email
+                self.adresseMailTF.placeholder = email
                 self.pseudoTF.text = me.pseudo
                 ImageLoader().loadImage(self.user?.profilImageUrl, self.profilImage)
             }
@@ -105,6 +105,7 @@ class ProfilController: UIViewController {
     
     func updateProfile(_ image: UIImage) {
         guard let uid = FireAuth().myId() else { return }
+        
         let ref = FireStorage().userProfile(uid) //définit un emplacement pour l'user
         
         FireStorage().sendImageToFirebase(ref, image) { (url, error) in   //envoi l'image et récupére l'url
@@ -114,10 +115,20 @@ class ProfilController: UIViewController {
                                            "surname": self.surnameTF.text as Any,
                                            "pseudo": self.pseudoTF.text as Any
                                           ]
-                FireDatabase().updateUser(uid, data: data)   //met à jour le profil = ajout url
+                FireDatabase().updateUser(uid, data: data)   //met à jour le profil = ajout url + pseudo + changement
             }
         }
     }
+    
+    @IBAction func updateMailButton(_ sender: UIButton) {
+        print("Méthode en contruction ...")
+/*
+        adresseMailTF.placeholder = ""
+        guard let newAdressMail = adresseMailTF.text else { return }
+        FireAuth().updateUserEmail(newEmail: newAdressMail, password: "123456")
+*/
+    }
+    
 
 }
 

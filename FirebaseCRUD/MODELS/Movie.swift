@@ -12,7 +12,7 @@ class Movie {
     
     var ref: DocumentReference
     var uid: String
-    var title: String
+    var titre: String
     var part: String
     var year: String
     var director: String
@@ -23,7 +23,7 @@ class Movie {
         ref = document.reference
         uid = document.documentID
         let data = document.data() ?? [:]
-        title = data["title"] as? String ?? ""
+        titre = data["titre"] as? String ?? ""
         part = data["part"] as? String ?? ""
         year = data["year"] as? String ?? ""
         director = data["director"] as? String ?? ""

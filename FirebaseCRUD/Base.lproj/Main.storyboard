@@ -304,6 +304,18 @@
                                     <action selector="validateButton:" destination="aPL-Gl-loa" eventType="touchUpInside" id="PSe-zK-Wh8"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nr4-Yl-Z6h">
+                                <rect key="frame" x="313" y="374" width="57" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="9cL-Hl-9Rh"/>
+                                </constraints>
+                                <state key="normal" title="changer">
+                                    <color key="titleColor" red="0.90588235289999997" green="0.29803921570000003" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="updateMailButton:" destination="aPL-Gl-loa" eventType="touchUpInside" id="UUQ-Ur-4Sc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="f82-tJ-rqT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -315,6 +327,7 @@
                             <constraint firstItem="47f-mr-IwE" firstAttribute="leading" secondItem="f82-tJ-rqT" secondAttribute="leading" constant="20" id="6B4-Nu-R70"/>
                             <constraint firstItem="f82-tJ-rqT" firstAttribute="trailing" secondItem="Whg-Lf-f1k" secondAttribute="trailing" constant="20" id="9dT-zw-oFF"/>
                             <constraint firstItem="Akv-Ol-xy0" firstAttribute="leading" secondItem="f82-tJ-rqT" secondAttribute="leading" constant="20" id="ArS-bu-p5t"/>
+                            <constraint firstItem="Nr4-Yl-Z6h" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="f82-tJ-rqT" secondAttribute="leading" symbolic="YES" id="Egp-ZP-mHC"/>
                             <constraint firstItem="7ps-Q3-xjx" firstAttribute="top" secondItem="SLZ-Bm-D9z" secondAttribute="bottom" constant="5" id="G8C-E7-Bpt"/>
                             <constraint firstItem="f2b-MM-xyS" firstAttribute="top" secondItem="2vN-5o-HvY" secondAttribute="bottom" constant="5" id="GcT-jM-bQy"/>
                             <constraint firstItem="f82-tJ-rqT" firstAttribute="trailing" secondItem="7ps-Q3-xjx" secondAttribute="trailing" constant="20" id="Gvr-rV-BMs"/>
@@ -322,10 +335,12 @@
                             <constraint firstItem="7ps-Q3-xjx" firstAttribute="leading" secondItem="f82-tJ-rqT" secondAttribute="leading" constant="20" id="Ls9-By-ZPA"/>
                             <constraint firstItem="u0r-7E-gb8" firstAttribute="top" secondItem="f82-tJ-rqT" secondAttribute="top" id="RYK-i5-Fbt"/>
                             <constraint firstItem="f82-tJ-rqT" firstAttribute="trailing" secondItem="5of-xv-NYb" secondAttribute="trailing" constant="20" id="Tfu-hT-pRc"/>
+                            <constraint firstItem="Akv-Ol-xy0" firstAttribute="top" secondItem="Nr4-Yl-Z6h" secondAttribute="bottom" constant="5" id="Y8A-fq-GCq"/>
                             <constraint firstItem="HwG-6u-TSL" firstAttribute="leading" secondItem="f82-tJ-rqT" secondAttribute="leading" constant="20" id="aS2-gX-5tt"/>
                             <constraint firstItem="Akv-Ol-xy0" firstAttribute="top" secondItem="47f-mr-IwE" secondAttribute="bottom" constant="5" id="bbo-md-nrx"/>
                             <constraint firstItem="jyR-Xr-l3r" firstAttribute="leading" secondItem="f82-tJ-rqT" secondAttribute="leading" constant="20" id="bjh-HV-sSy"/>
                             <constraint firstItem="w5e-2v-WGk" firstAttribute="leading" secondItem="f82-tJ-rqT" secondAttribute="leading" constant="20" id="c2d-eS-YZm"/>
+                            <constraint firstItem="f82-tJ-rqT" firstAttribute="trailing" secondItem="Nr4-Yl-Z6h" secondAttribute="trailing" constant="20" id="c3l-bY-paG"/>
                             <constraint firstItem="2vN-5o-HvY" firstAttribute="leading" secondItem="f82-tJ-rqT" secondAttribute="leading" constant="20" id="gV4-tc-omb"/>
                             <constraint firstItem="47f-mr-IwE" firstAttribute="top" secondItem="7ps-Q3-xjx" secondAttribute="bottom" constant="15" id="gek-13-MLN"/>
                             <constraint firstItem="f2b-MM-xyS" firstAttribute="leading" secondItem="f82-tJ-rqT" secondAttribute="leading" constant="20" id="h6e-dd-BBr"/>
@@ -493,7 +508,7 @@
                                             <outlet property="delegate" destination="zc8-JA-KkG" id="vEe-7A-Xm2"/>
                                         </connections>
                                     </textView>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Volet :" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zil-XY-Bcv">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Episode :" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zil-XY-Bcv">
                                         <rect key="frame" x="10" y="365" width="330" height="30"/>
                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                         <constraints>
