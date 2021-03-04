@@ -8,7 +8,7 @@
 import UIKit
 import SDWebImage
 
-class ProfilController: UIViewController {
+class ProfilController: RootController {
     
     @IBOutlet weak var profilImage: UIImageView!
     @IBOutlet weak var nameTF: UITextField!
@@ -111,13 +111,14 @@ class ProfilController: UIViewController {
     }
     
     @IBAction func updateMailButton(_ sender: UIButton) {
-        print("Méthode en contruction ...")
-/*
-        adresseMailTF.placeholder = ""
-        guard let newAdressMail = adresseMailTF.text else { return }
-        FireAuth().updateUserEmail(newEmail: newAdressMail, password: "123456")
-*/
+        adresseMailTF.placeholder = "Saississez votre nouvelle adresse Email"
     }
+        
+    func printToConsole(message : String) {
+           #if DEBUG
+               print(message)
+           #endif
+       }
     
 //MARK: - update profil
         
@@ -134,6 +135,11 @@ class ProfilController: UIViewController {
                                                "pseudo": self.pseudoTF.text as Any
                                               ]
                     FireDatabase().updateUser(uid, data: data)   //met à jour le profil = ajout url + pseudo + changement
+                   
+                    if ((self.adresseMailTF.text?.isValidEmail) != nil) {
+                        FireAuth().updateUserEmail(newEmail: self.adresseMailTF.text!, password: "123456")
+                        self.showAlert("Mise a jour", "votre adresse Email est modifiée")
+                    }
                 }
             }
         }
@@ -166,5 +172,14 @@ extension ProfilController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+}
+
+extension String {
+    var isValidEmail: Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+
+        let emailTest = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluate(with: self)
     }
 }

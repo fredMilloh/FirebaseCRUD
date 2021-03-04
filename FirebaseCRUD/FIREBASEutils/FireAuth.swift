@@ -26,7 +26,7 @@ class FireAuth {
     func myEmail() -> String? {
         return Auth.auth().currentUser?.email
     }
-/*    //changer adresse mail
+    //changer adresse mail
     func updateUserEmail(newEmail: String, password: String) {
             //obtenir le credential
         guard let currentEmail = myEmail() else { return }
@@ -35,21 +35,21 @@ class FireAuth {
             // ré-autentifier l'utilisateur, pour avoir une auth récente necessaire au changement email/password
         Auth.auth().currentUser?.reauthenticate(with: credential, completion: { (result, error) in
             if error != nil {
-                print("ERREUR: ", error?.localizedDescription ?? "pour la mise à jour")
+                self.printToConsole(message: "ERREUR:  \(String(describing: error?.localizedDescription)) pour la mise à jour")
                 return
             }
             
                 //mise à jour de l'email
             Auth.auth().currentUser?.updateEmail(to: newEmail, completion: { (error) in
                 if error != nil {
-                    print("ERREUR: ", error?.localizedDescription ?? "pour la mise à jour")
+                    self.printToConsole(message: "ERREUR:  \(String(describing: error?.localizedDescription)) pour la mise à jour")
                 } else {
-                     print("email mis à jour")
+                    self.printToConsole(message: "email mis à jour")
                 }
             })
         })
     }
-*/
+    
     func signIn(_ mail: String, _ pwd: String, completion: ((_ uid: String?, _ error: String?) -> Void)?) {
         self.completion = completion
         Auth.auth().signIn(withEmail: mail, password: pwd, completion: handleResult(_:_:))
@@ -73,7 +73,13 @@ class FireAuth {
         do {
             try Auth.auth().signOut() // signOut() : throws donc do/catch
         } catch {
-            print(error.localizedDescription)
+            printToConsole(message: "\(error.localizedDescription)")
         }
     }
+    
+    func printToConsole(message : String) {
+           #if DEBUG
+               print(message)
+           #endif
+       }
 }

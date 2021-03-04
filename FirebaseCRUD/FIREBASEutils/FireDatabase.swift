@@ -85,12 +85,20 @@ class FireDatabase {
             var movies: [Movie] = []        //création d'un tableau de movie vide
             let documents = snapshot!.documents //on met les snaps dans un tableau de documents
             for document in documents {
-                print("doc:", document.data())
+                printToConsole(message: "doc:  String(\(document.data()))")
                 movies.append(Movie(document))     //chaque document est mis au format Movie et ajouter au tableau Movies
             }
             movieCompletion?(movies, nil)
         }
     }
+    
+    func printToConsole(message : String) {
+            #if DEBUG
+                print(message)
+            #endif
+        }
+    
+//Marks: - mettre a jour movie - uid = uid du document
     
     func updateMovie(_ uid: String, data: [String: Any]) {
         moviesCollection.document(uid).updateData(data)
