@@ -25,6 +25,10 @@ class ProfilController: RootController {
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        completeForm()
+    }
+    
 //MARK: - get user
     
     func completeForm() {
@@ -113,12 +117,6 @@ class ProfilController: RootController {
     @IBAction func updateMailButton(_ sender: UIButton) {
         adresseMailTF.placeholder = "Saississez votre nouvelle adresse Email"
     }
-        
-    func printToConsole(message : String) {
-           #if DEBUG
-               print(message)
-           #endif
-       }
     
 //MARK: - update profil
         
@@ -135,15 +133,40 @@ class ProfilController: RootController {
                                                "pseudo": self.pseudoTF.text as Any
                                               ]
                     FireDatabase().updateUser(uid, data: data)   //met à jour le profil = ajout url + pseudo + changement
-                   
-                    if ((self.adresseMailTF.text?.isValidEmail) != nil) {
-                        FireAuth().updateUserEmail(newEmail: self.adresseMailTF.text!, password: "123456")
-                        self.showAlert("Mise a jour", "votre adresse Email est modifiée")
+                    self.updateEmail()
+                    
                     }
                 }
             }
-        }
+        
+    func updateEmail() {
+        // on ajoute une alerte pour demander le mot de passe nécessaire à le reconnexion
+        let alert = UIAlertController(title: "Mot de Passe?", message: "Pour changer votre adresse Email, vous devez vous reconnecter, merci de saissir votre mot de passe", preferredStyle: .alert)
 
+        alert.addTextField(configurationHandler: { textField in
+            textField.placeholder = "Saisir votre mot de passe"
+            textField.isSecureTextEntry = true
+        })
+        alert.addAction(UIAlertAction(title: "Annuler", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: .destructive, handler: { [self] action in
+            
+            //si l'email est au format email, on récupére le password et update
+            if ((self.adresseMailTF.text?.isValidEmail) != nil), let password = alert.textFields?.first?.text {
+                
+                FireAuth().updateUserEmail(newEmail: self.adresseMailTF.text!, password: password)
+                self.showAlert("Mise a jour", "votre adresse Email est modifiée avec succès")
+            }
+            }))
+
+        self.present(alert, animated: true)
+        }
+    
+    func printToConsole(message : String) {
+           #if DEBUG
+               print(message)
+           #endif
+       }
+    
 }
 
 //MARK: - extensions

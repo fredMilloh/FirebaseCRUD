@@ -161,7 +161,7 @@
                                     <constraint firstAttribute="height" constant="30" id="ame-Tp-jmn"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Déconnection">
+                                <state key="normal" title="Déconnexion">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
