@@ -61,18 +61,22 @@ class FireAuth {
 //MARK:- changer adresse mail
     
     func updateUserEmail(newEmail: String, password: String) {
-            //obtenir le credential
+            //obtenir le credential (identifiants)
         guard let currentEmail = myEmail() else { return }
         let credential = EmailAuthProvider.credential(withEmail: currentEmail, password: password)
         
-            // ré-autentifier l'utilisateur, pour avoir une auth récente necessaire au changement email/password
+            // ré-authentifier l'utilisateur, pour avoir une auth récente necessaire au changement email/password
         Auth.auth().currentUser?.reauthenticate(with: credential, completion: { (result, error) in
             if error != nil {
                 self.printToConsole(message: "ERREUR:  \(String(describing: error?.localizedDescription)) pour la mise à jour")
                 return
             }
-            
+                //mise à jour avec envoi d'un email
+            Auth.auth().currentUser?.sendEmailVerification(beforeUpdatingEmail: newEmail, completion: nil)
+            self.printToConsole(message: "message envoyé")
+                
                 //mise à jour de l'email
+            /*
             Auth.auth().currentUser?.updateEmail(to: newEmail, completion: { (error) in
                 if error != nil {
                     self.printToConsole(message: "ERREUR:  \(String(describing: error?.localizedDescription)) pour la mise à jour")
@@ -80,6 +84,7 @@ class FireAuth {
                     self.printToConsole(message: "email mis à jour")
                 }
             })
+            */
         })
     }
     
