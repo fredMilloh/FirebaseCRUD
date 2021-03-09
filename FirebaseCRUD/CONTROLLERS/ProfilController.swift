@@ -98,7 +98,7 @@ class ProfilController: RootController {
         
         present(photoSourceController, animated: true, completion: nil)
     }
-
+    
 //MARK: - buttons
     
     @IBAction func validateButton(_ sender: UIButton) {
@@ -154,10 +154,11 @@ class ProfilController: RootController {
             if ((self.adresseMailTF.text?.isValidEmail) != nil), let password = alert.textFields?.first?.text {
                 
                 FireAuth().updateUserEmail(newEmail: self.adresseMailTF.text!, password: password)
-                self.showAlert("Mise a jour", "votre adresse Email est modifiée avec succès")
+                self.showAlert("Mise à jour Email", "Un Email de confirmation a été envoyé à votre nouvelle adresse. Consultez votre boite de réception ou courrier indésirable, pour valider le changement d'adresse mail")
+                //self.showAlert("Mise a jour", "votre adresse Email est modifiée avec succès")
             }
             }))
-
+        adresseMailTF.resignFirstResponder()
         self.present(alert, animated: true)
         }
     
@@ -193,8 +194,13 @@ extension ProfilController: UIImagePickerControllerDelegate, UINavigationControl
 extension ProfilController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            //hide the keyboard
         textField.resignFirstResponder()
         return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
     }
 }
 

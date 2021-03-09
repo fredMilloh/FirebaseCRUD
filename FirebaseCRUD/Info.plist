@@ -4,6 +4,10 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>&quot;L&apos;appli souhaite accéder à votre album photo pour ajouter une photo de profil&quot;</string>
+	<key>NSCameraUsageDescription</key>
+	<string>&quot;L&apos;appli souhaite accéder à votre appareil photo pour prendre une phot ode profil&quot;</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
