@@ -89,7 +89,7 @@
                                     <constraint firstAttribute="height" constant="30" id="obe-mi-QHA"/>
                                 </constraints>
                                 <segments>
-                                    <segment title="Connection"/>
+                                    <segment title="Connexion"/>
                                     <segment title="Création Compte"/>
                                 </segments>
                                 <color key="tintColor" systemColor="systemIndigoColor"/>
