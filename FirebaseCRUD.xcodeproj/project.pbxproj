@@ -97,7 +97,6 @@
 			children = (
 				B637356B25DD25170087E20F /* FIREBASEutils */,
 				B637356725DD22E60087E20F /* MODELS */,
-				B637356625DD22D80087E20F /* VIEWS */,
 				B637356525DD22C70087E20F /* CONTROLLERS */,
 				B637353125DAC7A10087E20F /* AppDelegate.swift */,
 				B637353325DAC7A10087E20F /* SceneDelegate.swift */,
@@ -121,13 +120,6 @@
 				B63BD0E625ECEBD700BD0D24 /* DetailsController.swift */,
 			);
 			path = CONTROLLERS;
-			sourceTree = "<group>";
-		};
-		B637356625DD22D80087E20F /* VIEWS */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = VIEWS;
 			sourceTree = "<group>";
 		};
 		B637356725DD22E60087E20F /* MODELS */ = {
